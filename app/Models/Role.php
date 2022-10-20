@@ -31,4 +31,9 @@ class Role extends Model
         return $this->belongsToMany(User::class, 'users_roles')
             ->withTimestamps();
     }
+
+    public function getIsActiveAttribute()
+    {
+        return $this->deleted_at ? false : true;
+    }
 }

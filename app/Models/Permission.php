@@ -31,4 +31,9 @@ class Permission extends Model
         return $this->belongsToMany(User::class, 'users_permissions')
             ->withTimestamps();
     }
+
+    public function getIsActiveAttribute()
+    {
+        return $this->deleted_at ? false : true;
+    }
 }
