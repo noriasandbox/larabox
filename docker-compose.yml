@@ -44,3 +44,8 @@ services:
 networks:
     larabox_network:
         driver: bridge
+        name: larabox_network
+        ipam:
+            config:
+                - subnet: 192.168.0.0/16
+                  gateway: 192.168.0.1
